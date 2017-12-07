@@ -1,0 +1,11 @@
+<div id="main-container" class="container">
+    <div>
+        <h2>Novo Evento</h1>
+    </div>
+
+    <%= render 'form', event: @event %>
+
+    <!--<h1><%= link_to 'Back', events_path %></h1>-->
+    <%= link_to "Eventos", events_path, class: 'btn btn-default' %>
+
+</div>

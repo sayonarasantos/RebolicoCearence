@@ -1,0 +1,21 @@
+<!--SE DER ALGUM ERRO AQUI, NAO APAGA NADA DESSE ARQUIVO, APAGA A LINHA QUE FAZ REFERENCIA A ESSA PAGINA EM WELCOME/INDEX -->
+<div id="div_centralizada">
+    <!--VERIFICAR ESSA CONDICIOAL-->
+    <% if @events != nil  %>
+        <% @events.each do |event| %>
+            <div class="card">
+              <div class="card-header">
+                <%= event.eventdate %>
+              </div>
+              <div class="card-block">
+                <h4 class="card-title"><%= event.title %></h4>
+                <p class="card-text"><%= event.description %></p>
+                <%= link_to 'Show', event, class: "btn btn-lg btn-primary" %>
+              </div>
+            </div>
+        <% end %>
+    <% else %>
+        <div>Sem eventos publicados. :( </div>
+    <% end %>
+    
+</div>

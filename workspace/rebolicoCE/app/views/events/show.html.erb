@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<div id="main-container" class="container">
+    
+    <div>
+        <h2>Detalhes sobre do evento</h2>
+    </div>
+    
+    <br>
+    
+    <div>
+      <h3><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> <%= @event.title %></h3>
+    </div>
+
+    <div class="center jumbotron">
+        <h4>Descrição: <%= @event.description %></h4>
+        <h4>Data: <%= @event.eventdate.strftime("%d/%m/%Y") %></h4>
+        <h4>Horário: <%= @event.eventtime.strftime("%H:%M") %></h4>
+        <h4>Estado: <%= @event.state %></h4>
+        <h4>Cidade: <%= @event.city %></h4>
+        <h4>Bairro: <%= @event.neighborhood %></h4>
+        <h4>Endereço: <%= @event.address %></h4>
+        <h4>CEP: <%= @event.cep %></h4>
+        <h4>Preço: <%= number_to_currency(@event.price, unit: "R$", separator: ",", delimiter: "") %></h4>
+        
+        <br>
+        
+        <% if current_user!=nil %>
+        <% if current_user.id == @event.user_id %>
+            <%= link_to "Editar", edit_event_path(@event), class: 'btn btn-success btn-sm' %>
+            <%= link_to "Apagar", @event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-sm' %>
+        <% end %>
+        <% end %>
+        
+    </div>
+
+    <%= link_to "Eventos", events_path, class: 'btn btn-default' %>
+    
+    <br>.</br>
+
+</div>
+
+
+<!--<h1></h1><%= link_to 'Edit', edit_event_path(@event) %> |-->
+<!--<%= link_to 'Back', events_path %> </h1>-->

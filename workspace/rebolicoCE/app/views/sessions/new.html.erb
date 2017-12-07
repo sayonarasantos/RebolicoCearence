@@ -1,0 +1,42 @@
+<div id="main-container" class="container">
+  <div>
+    <h2>Entrar</h1>
+  </div>
+  
+        
+  <%= form_for(:session, url: login_path) do |f| %>
+  
+    <div class="center jumbotron">
+      <form class="form-horizontal">
+        <fieldset>
+        
+          <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+              <%= f.email_field :email, autofocus: true, class: "form-control" %>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="inputCpf" class="col-lg-2 control-label">Senha</label>
+            <div class="col-lg-10">
+              <%= f.password_field :password, class: "form-control" %>
+            </div>
+          </div>
+            
+          <br>
+            
+          <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+				<%= f.submit "Log in", class: 'btn btn-success' %>
+				<%= link_to "Cancelar", welcome_path, class: 'btn btn-default' %>
+            </div>
+          </div>
+      		
+        </fieldset>
+      </form>
+    </div>
+  
+  <% end %>  
+
+</div>

@@ -1,0 +1,66 @@
+<!--<p id="notice"><%= notice %></p>-->
+
+<!--<p>-->
+<!--  <strong>Name:</strong>-->
+<!--  <%= @user.name %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Cpf:</strong>-->
+<!--  <%= @user.cpf %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Birthdate:</strong>-->
+<!--  <%= @user.birthdate %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Email:</strong>-->
+<!--  <%= @user.email %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Password digest:</strong>-->
+<!--  <%= @user.password_digest %>-->
+<!--</p>-->
+
+<!--<%= link_to 'Edit', edit_user_path(@user) %> |-->
+<!--<%= link_to 'Back', users_path %>-->
+
+
+
+
+<div class="main user-show">
+  <div class="container">
+    
+    <!-- Display an actor's info here -->
+    <div class="user">
+      <div class="info">
+        <h3 class="user-name"><%= @user.name %></h3>
+        <p class="user-email"><%= @user.email %></p>
+       
+        
+      </div>
+    </div>
+
+    <h2>Meus Eventos</h2>
+    <% @events.each do |event| %>
+    <div class="event">
+      <h3 class="event-title"><%= event.title %></h3>
+      <p class="event-description"><%= event.description %></p>
+      <p class="event-eventdate"><%= event.eventdate %></p>
+      <p class="event-eventtime"><%= event.eventtime %></p>
+    </div>
+    <% end %>
+    <%= link_to "Editar", edit_user_path(@user), class: "btn btn-info" %>
+    <%= link_to "Cadastrar Evento", new_event_path, class: "btn btn-default" %>
+    
+
+    <!--<a href="#" class="btn btn-primary"><%= link_to 'Edit', edit_user_path(@user) %></a>-->
+    <!--<a href="#" class="btn btn-primary"><%= link_to 'Back', welcome_path %></a>-->
+  </div>
+</div>
+
+
+ <!--|-->
